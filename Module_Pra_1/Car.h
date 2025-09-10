@@ -11,7 +11,7 @@ private:
     std::string transmissionType;
 
 public:
-    Car() : doorCount(4), transmissionType("Manual") {}
+    Car() : doorCount(4), transmissionType("Механическая") {}
     Car(const std::string& brand, const std::string& model, int year, int doors, const std::string& transmission)
         : Vehicle(brand, model, year), doorCount(doors), transmissionType(transmission) {}
 
@@ -29,6 +29,13 @@ public:
 
     void setTransmissionType(const std::string& transmission) {
         transmissionType = transmission;
+    }
+
+
+    void displayInfo() const override {
+        Vehicle::displayInfo();
+        std::cout << "Дверей: " << doorCount << std::endl;
+        std::cout << "Коробка передач: " << transmissionType << std::endl;
     }
 };
 

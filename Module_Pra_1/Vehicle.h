@@ -15,11 +15,11 @@ public:
         : brand(brand), model(model), year(year) {}
     Vehicle() : brand("Unknown"), model("Unknown"), year(0) {}
 
-    void start() const {
+    virtual void start() const {
         std::cout << "Двигатель " << brand << " " << model << " запущен." << std::endl;
     }
 
-    void stop() const {
+    virtual void stop() const {
         std::cout << "Двигатель " << brand << " " << model << " остановлен." << std::endl;
     }
 
@@ -30,6 +30,12 @@ public:
     void setBrand(const std::string& b) { brand = b; }
     void setModel(const std::string& m) { model = m; }
     void setYear(int y) { year = y; }
+
+    virtual void displayInfo() const {
+        std::cout << "Марка: " << brand << ", Модель: " << model << ", Год: " << year << std::endl;
+    }
+
+    virtual ~Vehicle() = default;
 };
 
 #endif

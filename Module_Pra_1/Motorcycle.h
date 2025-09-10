@@ -15,8 +15,8 @@ public:
                const std::string& bodyType, bool hasSideBox)
         : Vehicle(brand, model, year), bodyType(bodyType), hasSideBox(hasSideBox) {}
 
-    void displayInfo() const {
-        std::cout << "Мотоцикл: " << getBrand() << " " << getModel() << " (" << getYear() << ")\n";
+    void displayInfo() const override {
+        std::cout << "Мотоцикл: " << getBrand() << " " << getModel() << getYear() << "\n";
         std::cout << "Тип кузова: " << bodyType << "\n";
         std::cout << "Наличие бокса: " << (hasSideBox ? "Да" : "Нет") << "\n";
     }

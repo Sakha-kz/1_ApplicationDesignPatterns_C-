@@ -2,7 +2,7 @@
 #include "Vehicle.h"
 #include "Car.h"
 #include "Motorcycle.h"
-
+#include "Garage.h"
 
 int main() {
     Vehicle myCar("Toyota", "Camry", 2020);
@@ -20,6 +20,12 @@ int main() {
     myMotorcycle.start();
     myMotorcycle.stop();
     myMotorcycle.displayInfo();
-    
+
+    Garage myGarage;
+    myGarage.addVehicle(new Car("Ford", "Mustang", 2019, 2, "Manual"));
+    myGarage.addVehicle(new Motorcycle("Harley-Davidson", "Street 750", 2018, "Cruiser", false));
+    std::cout << "\nТранспортные средства в гараже:\n";
+    myGarage.displayVehicles();
+
     return 0;
 }
