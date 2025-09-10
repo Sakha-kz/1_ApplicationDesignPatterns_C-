@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Vehicle.h"
 #include "Car.h"
+#include "Motorcycle.h"
+
 
 int main() {
     Vehicle myCar("Toyota", "Camry", 2020);
@@ -14,5 +16,10 @@ int main() {
     std::cout << "Марка: " << mySedan.getBrand() << ", Модель: " << mySedan.getModel() << ", Год: " << mySedan.getYear() << std::endl;
     std::cout << "Количество дверей: " << mySedan.getDoorCount() << ", Тип трансмиссии: " << mySedan.getTransmissionType() << std::endl;
 
+    Motorcycle myMotorcycle("Yamaha", "MT-07", 2022, "Naked", true);
+    myMotorcycle.start();
+    myMotorcycle.stop();
+    myMotorcycle.displayInfo();
+    
     return 0;
 }
