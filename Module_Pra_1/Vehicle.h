@@ -13,6 +13,7 @@ private:
 public:
     Vehicle(const std::string& brand, const std::string& model, int year)
         : brand(brand), model(model), year(year) {}
+    Vehicle() : brand("Unknown"), model("Unknown"), year(0) {}
 
     void start() const {
         std::cout << "Двигатель " << brand << " " << model << " запущен." << std::endl;
@@ -21,6 +22,14 @@ public:
     void stop() const {
         std::cout << "Двигатель " << brand << " " << model << " остановлен." << std::endl;
     }
+
+    std::string getBrand() const { return brand; }
+    std::string getModel() const { return model; }
+    int getYear() const { return year; }
+
+    void setBrand(const std::string& b) { brand = b; }
+    void setModel(const std::string& m) { model = m; }
+    void setYear(int y) { year = y; }
 };
 
 #endif
