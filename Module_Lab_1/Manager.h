@@ -13,13 +13,13 @@ public:
         : Employee(n, i, r), fixedMoney(fixedMoney), bonus(bonus) {}
 
     double getFixedMoney() const { return fixedMoney; }
-    void setFixedMoney(double fm) { fixedMoney = fm; }
+    void setFixedMoney(double fixedMoney) { this->fixedMoney = fixedMoney; }
 
     double getBonus() const { return bonus; }
-    void setBonus(double b) { bonus = b; }
+    void setBonus(double bonus) { this->bonus = bonus; }
 
     double money() const override {
-        return fixedMoney + bonus;
+        return this->fixedMoney + this->bonus;
     }
 };
 
