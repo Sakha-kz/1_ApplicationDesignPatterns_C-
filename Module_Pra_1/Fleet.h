@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <memory>
 #include <algorithm>
 #include "Car.h"
 #include "Motorcycle.h"
@@ -10,11 +11,11 @@
 
 class Fleet {
 private:
-    std::vector<Garage> garages;
+    std::vector<std::unique_ptr<Garage>> garages;
 
 public:
-    void addGarage(const Garage& garage) {
-        garages.push_back(garage);
+    void addGarage(std::unique_ptr<Garage> garage) {
+        garages.push_back(std::move(garage));
     }
 
     void removeGarage(size_t index) {
@@ -27,16 +28,16 @@ public:
     std::vector<Vehicle*> findVehicles(Predicate pred) {
         std::vector<Vehicle*> result;
         for (auto& garage : garages) {
-            for (auto& vehicle : garage.vehicles) {
+            for (auto& vehicle : garage->vehicles) {
                 if (pred(vehicle)) {
-                    result.push_back(vehicle);
+                    result.push_back(vehicle.get());
                 }
             }
         }
         return result;
     }
 
-    const std::vector<Garage>& getGarages() const {
+    const std::vector<std::unique_ptr<Garage>>& getGarages() const {
         return garages;
     }
 };

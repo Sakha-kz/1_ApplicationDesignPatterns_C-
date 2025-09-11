@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
 #include "Vehicle.h"
 
 class Car : public Vehicle {
