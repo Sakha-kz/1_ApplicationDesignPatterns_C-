@@ -31,10 +31,10 @@ public:
     }
 
     void displayInfo() const {
-        std::cout << "Title: " << title << "\n"
-                  << "Author: " << author << "\n"
+        std::cout << "Название: " << title << "\n"
+                  << "Автор: " << author << "\n"
                   << "ISBN: " << isbn << "\n"
-                  << "Copies: " << copies << std::endl;
+                  << "Количество экземпляров: " << copies << std::endl;
     }
 };
 

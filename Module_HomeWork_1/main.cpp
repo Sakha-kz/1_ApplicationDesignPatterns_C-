@@ -4,10 +4,14 @@
 
 #include <iostream>
 #include "Book.h"
+#include "Reader.h"
 
 int main() {
-    Book book1("1984", "George Orwell", "1234567890", 5);
+    Book book1("1984", "Зеленый", "1234567890", 5);
     book1.displayInfo();
+
+    Reader reader1("Серик", 1);
+    reader1.displayInfo();
 
     return 0;
 }
