@@ -1,7 +1,5 @@
-//o	Читатель (Reader): Атрибуты – имя, идентификатор читателя.
-
-#ifndef Reader_H
-#define Reader_H
+#ifndef READER_H
+#define READER_H
 
 #include <iostream>
 #include <string>
@@ -14,18 +12,13 @@ public:
     Reader(const std::string& name, int readerID)
         : name(name), readerID(readerID) {}
 
-    std::string getName() const {
-        return name;
-    }
-
-    int getReaderID() const {
-        return readerID;
-    }
+    std::string getName() const { return name; }
+    int getReaderID() const { return readerID; }
 
     void displayInfo() const {
-        std::cout << "Имя Читателя: " << name << "\n"
-                  << "ID Читателя: " << readerID << std::endl;
+        std::cout << "Читатель: " << name
+                  << ", ID: " << readerID << std::endl;
     }
 };
 
-#endif 
+#endif
